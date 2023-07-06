@@ -22,3 +22,6 @@ takeOrder("customer 1", (customer) => {
         completeOrder(customer);
     });
 });
+
+// testing non-bloking
+console.log(`Non-bloked`);
