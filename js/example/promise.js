@@ -13,6 +13,13 @@ const meeting = new Promise((resolve, reject) => {
     }
 });
 
+const addToCalendar = (meetingDetails) => {
+    return new Promise((resolve, reject) => {
+        const calendar = `${meetingDetails.name} has been scheduled on ${meetingDetails.location} at ${meetingDetails.time}`;
+        resolve(calendar);
+    });
+};
+
 meeting
     .then((res) => {
         // resolved data
