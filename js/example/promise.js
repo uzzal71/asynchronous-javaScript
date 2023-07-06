@@ -21,4 +21,7 @@ meeting
     .catch((err) => {
         // rejected data
         console.log(err.message)
-    })
+    });
+
+// Testing non bloking
+console.log('Non-Bloking');
