@@ -1,4 +1,4 @@
-const hasMeeting = false;
+const hasMeeting = true;
 
 const meeting = new Promise((resolve, reject) => {
     if (!hasMeeting) {
@@ -26,9 +26,13 @@ const addToCalendarNew = (meetingDetails) => {
 };
 
 async function myMeeting() {
-    const meetingDetails = await meeting;
-    const calendar = await addToCalendarNew(meetingDetails);
-    console.log(calendar);
+    try {
+        const meetingDetails = await meeting;
+        const calendar = await addToCalendarNew(meetingDetails);
+        console.log(calendar);
+    } catch (error) {
+        console.log(error.message);
+    }
 }
 
 myMeeting();
